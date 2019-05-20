@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="header" th:fragment="topLine">
+    <div class="log-in-log-out-buttons">
+        <a href="" class="log" role="button" aria-pressed="true" th:text="${user}" th:if="${not user.isEmpty()}">Primary link</a>
+        <a  class="log"th:href="@{/logout}"  role="button" aria-pressed="true" th:if="${not user.isEmpty()}">Log out</a>
+        <a class="log" th:href="@{/registration}"  role="button" aria-pressed="true" th:if="${user.isEmpty()}">Registration</a>
+        <a class="log" th:href="@{/login}"  role="button" aria-pressed="true" th:if="${user.isEmpty()}">Log in</a>
+    </div>
+    <div class="logo_catalog">
+        <p class="logo">Gift
+            <img src="img/logo2.png" th:src="@{img/logo2.png?v=1}" alt="logo">
+        </p>
+        <p class="phrase-under-logo">HIGH QUALITY AND BEAUTY</p>
+    </div>
+
+
+    <div class="search_line">
+
+        <input type="button" onclick="history.back()" value="Main" class="back">
+        <a href="/myGift" class="contact-us">Contact us</a>
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" method="post" th:action="@{search}">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img th:src="@{img/magnifire.png?v=1}" style="height:30px; width:30px;"></button>
+            </form>
+        </nav>
+        <a href="/myGift" class="basket">Basket</a>
+
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+     <meta charset="UTF-8">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/main.css" th:href="@{css/main.css?v=1}">
+		<link rel="stylesheet" href="css/Catalog.css" th:href="@{css/catalog.css?v=1}">
+	</head>
+	
+	
+	<body>
+	<div th:replace="fragments/topLine :: topLine">
+	</div>
+
+					<div class="products clearfix"  >
+                        <div class="choose-item" data-items="8" data-cols="2">
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/pack.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Packs</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/cards.jpg?v=1}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Cards</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/box.jpg?v=1}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Boxes</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/sweets.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Sweets</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/alco.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Alcohole</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/plants.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Plants</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/device.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Devices</button>
+                            </div>
+                        </form>
+                        <form class="card" style="width: 18rem;">
+                            <img th:src="@{img/other.jpg}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <button class="card-button">Other</button>
+                            </div>
+                        </form>
+                        </div>
+                            <div class="card" style="width: 18rem; float:left;" th:each="prod : ${products}">
+                                <img th:src="@{img/1.jpg?v=1}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${prod.name}">Название карточки</h5>
+                                    <p class="card-text" th:text="${prod.description}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="product-price">
+                                        <h6>Cost:</h6>
+                                        <p th:text="${prod.cost}">cost</p>
+                                    </div>
+                                    <div class="buttons-for-product">
+                                        <form method="get" th:action="@{/oneProduct}">
+                                            <input hidden type="text" th:value="${prod.id}" name="id">
+                                            <button type="submit" class="btn btn-outline-dark" role="button" >Learn more</button>
+                                        </form>
+                                        <form class="second" method="post" th:action="@{addProd}">
+                                            <input hidden type="text" th:value="${prod.id}" name="id">
+                                            <button class="btn btn-dark" type="submit">Order</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <div>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item ">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">-</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">+</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+				
+
+
+
+				</div>
+
+	<footer th:replace="fragments/general :: footer">
+
+  </footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>	
+</html>

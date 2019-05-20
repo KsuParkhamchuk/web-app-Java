@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/css/main.css" th:href="@{css/main.css}">
+	<link rel="stylesheet"  href="../static/css/registration.css" th:href="@{css/registration.css}">
+  <link href="https://fonts.googleapis.com/css?family=Amiri|Trocchi" rel="stylesheet">
+	<title>Registration form</title>
+</head>
+<body>
+	    
+      <div class="registration-form">
+      	<form class="registration" method="post" th:action="@{/registration}">
+      		<h1>Registration</h1>
+      		<div class="registration-field">
+      		    <label for="">User name:</label>
+      		    <input type="text" name="username">
+      	    </div>
+            <div class="registration-field">
+      		    <label for="">Password:</label>
+      		    <input type="password" name="password" >
+      	    </div>
+      	    <div class="registration-field">
+      		    <label for="">Confirm password:</label>
+      		    <input type="password" name="confirmPassword" th:placeholder="${password}">
+      	    </div>
+      	    <div class="registration-field">
+                <label for="">Email adress:</label>
+                <input type="text" name="mail">
+      	    </div >
+            <!--class="button-container"-->
+      	    <button type="submit" class="confirm">Confirm</input>
+            <button class="confirm" style="float: left;">Back</button>
+        </form>
+      </div>
+
+      <footer th:replace="fragments/general :: footer">
+
+      </footer>
+			
+</body>
+</html>

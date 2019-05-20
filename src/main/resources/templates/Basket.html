@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+     <meta charset="UTF-8">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css?v=1}">
+		<link rel="stylesheet" href="../static/css/basket.css" th:href="@{css/basket.css?v=1}">
+		<link href="https://fonts.googleapis.com/css?family=Amiri|Trocchi" rel="stylesheet">
+	</head>
+	<body>
+	<div th:replace="fragments/topLine :: topLine">
+
+	</div>
+	<div class="containers">
+		<div class="container-for-products">
+            <form class="card" style="width: 18rem;" th:if="${not em.isEmpty()}">
+                <div class="card-body">
+                    <h5 class="card-title">Basket is empty</h5>
+                    <a href="#" class="btn-a btn-primary">+</a>
+                    <input type="text" class="id" readonly style="float:left">
+                </div>
+            </form>
+			<form class="card" style="width: 18rem;" th:each="prod : ${basket}">
+				<div class="delete-on-right-side">
+					<button type="submit" class="del">-</button>
+				</div>
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title" th:text="${prod.product.name}">Card title</h5>
+					<input type="text" class="id" readonly th:value="${prod.product.id}" name="id">
+					<a href="#" class="btn btn-primary" th:text="${prod.product.cost}">Price</a>
+				</div>
+			</form>
+		</div>
+		<form method="post" th:action="@{makeOrder}" class="Make-an-order">
+			<div class="total-cost">
+				<div class="COST">
+					<h4> Total cost: </h4>
+				</div>
+				<div class="price">
+					<p><strong th:text="${price}">cost</strong></p>
+				</div>
+                <div class="btn-for-order">
+                    <button type="button" class="Make-an-order btn-primary btn-lg">Make an order</button>
+                </div>
+            </div>
+		</form>
+	</div>
+		<footer th:replace="fragments/general :: footer">
+        </footer>
+	</body>
+	</html>

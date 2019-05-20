@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Gift</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css?v=1}">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-page">
+		<div class="top-line">
+			<div class="dropdown">
+
+  				<div class="btn-group" role="group" aria-label="Basic example">
+					<button type="button" class="btn-right" th:text="${user}" th:if="${not user.isEmpty()}"></button>
+					<form method="post" th:action="@{/logout}">
+					<button type="submit" class="btn btn-secondary " th:if="${not user.isEmpty()}">
+						Log out
+					</button></form>
+  					<a href="/registration"><button type="button" class="btn-right" th:if="${user.isEmpty()}">Registration</button></a>
+  					<a th:href="@{/login}"><button type="button" class="btn btn-secondary " th:if="${user.isEmpty()}">
+    					Sign in
+  					</button></a>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<main class="hello-page-main">
+			<div class="logo_index">
+				<p>Podarock
+					<img src="img/logo.png" th:href="@{img/logo.png?v=1}" alt="logo"></p>
+			</div>
+			<div class="phrase">
+				<p>Choose what you really like</p>
+			</div>
+			<div class="twoButtons">
+				<a href="/Catalog"><button type="button" class="btn-on-main-page " >Catalog</button></a>
+
+			</div>
+			<div class="greeting">
+				<p>Podarock - ready-made gift sets.
+					<br>We have collected more than 100 ready-made gift sets. You can choose
+					<br>a gift from our catalog or create your own individual set,
+					<br>and we will gladly collect it especially for you.
+				</p>
+			</div>
+		</main>
+	</div>
+        <footer th:replace="fragments/general :: footer">
+
+	    </footer>
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+</body>
+</html>	
+	

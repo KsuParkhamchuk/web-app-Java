@@ -1,0 +1,87 @@
+
+.containers {
+	margin: 20px auto;
+	border-radius: 20px;
+	width:90%;
+	background:#FEFCE7;
+}
+.container-for-products {
+	display:flex;
+}
+.card {
+	margin:20px;
+	width:30%;
+}
+
+.card input.id {
+	width:20%;
+	height: 20px;
+	float:right;
+	visibility:hidden;
+}
+.delete-on-right-side {
+	float:right;
+	width:100%;
+}
+
+.del {
+	float:right;
+	position:relative;
+	border:none;
+	background: red;
+	margin:5px 3px;
+	padding:3px 10px;
+	border-radius: 5px;
+	font-size: 15px;
+	width:10%;
+
+}
+
+.total-cost {
+	margin-left: 20px;
+	display:flex;
+	width:100%
+}
+
+.COST{
+	width:20%;
+
+}
+
+.price{
+	width:20%;
+	font-size: 20px;
+}
+
+.btn-for-order {
+	width:60%;
+}
+
+.btn-for-order button {
+	float:right;
+	border:none;
+	background: #02090C;
+
+}
+
+.Make-an-order {
+	display:flex;
+	margin: 30px 20px 30px 20px;
+}
+
+
+
+a.btn-a.btn-primary {
+	background: transparent;
+	color: grey;
+	font-size: 50px;
+	border-radius: 50px;
+	width: 40%;
+	border: 1px dashed;
+	margin: 0 30% 0;
+	padding: 0 17px;
+}
+h5.card-title {
+	text-align: center;
+	margin-bottom: 20px;
+}

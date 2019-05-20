@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div >
+    <br>
+    <br>
+</div>
+<footer th:fragment="footer">
+    <hr>
+    <div class="footer-data">
+
+        <div class="footer-column">
+            <a href="" class="underlined">Advertising</a>
+            <p  class="field">Advertising</p>
+            <p  class="field">Advertising</p>
+        </div>
+
+
+        <div class="footer-column">
+            <a href="/Contacts" class="underlined">Contacts</a>
+            <p>Social networks:</p>
+            <a href="https://vk.com/kparkhomchuk" ><img src="../static/css/img/vk.png" th:src="@{img/vk.png?v=1}"></a>
+            <a href="https://vk.com/kparkhomchuk" ><img src="../static/css/img/insta.png" th:src="@{img/insta.png?v=1}"></a>
+            <a href="https://vk.com/kparkhomchuk" ><img src="../static/css/img/facebook.png" th:src="@{img/facebook.png?v=1}"></a>
+            <a href="https://vk.com/kparkhomchuk" ><img src="../static/css/img/viber.png" th:src="@{img/viber.png?v=1}"></a>
+            <p class="field"></p>
+            <p>Phones:</p>
+            <p>+375446756655 (MTC)
+                <br>+375297867756 (A1)
+            </p>
+            <p>Email address:</p>
+            <p> podarock_shop@mail.ru
+                <br> podarock_surprise@gmail.com</p>
+        </div>
+
+        <div class="footer-column">
+            <a  href="" class="underlined">Vacancies</a>
+            <p   class="field">Advertising</p>
+            <p   class="field">Advertising</p>
+            <p   class="field">Advertising</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
