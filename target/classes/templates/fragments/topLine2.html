@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div class="header" th:fragment="topLine">
+<div class="header" th:fragment="topLine2">
     <div class="log-in-log-out-buttons">
         <a href="" class="log" role="button" aria-pressed="true" th:text="${user}" th:if="${not user.isEmpty()}">Primary link</a>
         <a  class="log"th:href="@{/logout}"  role="button" aria-pressed="true" th:if="${not user.isEmpty()}">Log out</a>
@@ -30,7 +30,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img th:src="@{img/magnifire.png?v=1}" style="height:30px; width:30px;"></button>
             </form>
         </nav>
-        <a href="/myGift" class="basket">Basket</a>
+        <a href="/Catalog" class="basket">Catalog</a>
 
 
 
